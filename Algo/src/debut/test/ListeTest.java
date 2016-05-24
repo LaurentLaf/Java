@@ -13,10 +13,6 @@ public class ListeTest {
 	
 	@Test
 	public void testEstVide() {
-		//assertEquals(Liste.estVide(Liste.initListe1()), false);
-		
-		//encore mieux utiliser assertFalse(liste); assertTrue(liste);
-		
 		assertFalse(Liste.estVide(Liste.initListe1()));
 		assertFalse(Liste.estVide(Liste.initListe2()));
 		assertTrue(Liste.estVide(Liste.listeVide()));
@@ -31,10 +27,27 @@ public class ListeTest {
 
 	@Test
 	public void testSuite() {
-		 
 		assertEquals(Liste.suite(Liste.initListe1()), Liste.initListe2());
-		//assertEquals(Liste.suite(Liste.initListe1()), "[7, 8, 9]");
-		//assertEquals(Liste.suite(Liste.initListe1()), "[]"); 
+		assertEquals(Liste.suite(Liste.initListe2()), Liste.initListe3());
+		assertNull(Liste.suite(Liste.listeVide())); 
 	}
-
+	
+	@Test
+	public void testestSurLeDernierElement() {
+		assertFalse(Liste.estSurLeDernierElement(Liste.initListe1()));
+		assertFalse(Liste.estSurLeDernierElement(Liste.initListe2()));
+		assertTrue(Liste.estSurLeDernierElement(Liste.initListe3()));
+		assertFalse(Liste.estSurLeDernierElement(Liste.listeVide()));	
+	}
+	
+	@Test
+	public void testdernier() {
+		assertEquals(Liste.dernier(Liste.initListe1()), "monde");
+		assertEquals(Liste.dernier(Liste.initListe2()), "monde");
+		assertEquals(Liste.dernier(Liste.initListe3()), "monde");
+		assertNull(Liste.dernier(Liste.listeVide()));
+	}
+	
+	
+	
 }
