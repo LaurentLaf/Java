@@ -13,8 +13,9 @@ public class Liste {
 		//System.out.println(premier(listeVide()));
 		//System.out.println(estSurLeDernierElement(initListe1()));
 		//System.out.println(estSurLeDernierElement(initListe3()));
-		System.out.println(dernier(initListe1()));
-		//System.out.println(dernier(initListe3()));
+		//System.out.println(premier(suite(initListe1())));
+		//String aaa=dernier(initListe1());
+		System.out.println(dernier(initListe3()));
 		//System.out.println(dernier(listeVide()));
 
 	}
@@ -92,7 +93,7 @@ public class Liste {
 	public static ArrayList<String> suite(ArrayList<String> liste) {
 		ArrayList<String> rep = null;
 		if (!estVide(liste)) {
-			//rep = liste;		!!! DEMANDER POURQUOI CA NE FONCTIONNE PAS COMME CELA !!!
+			//rep = liste;
 			rep = new ArrayList<String>();
 			rep.addAll(liste);
 			rep.remove(0);
@@ -111,7 +112,6 @@ public class Liste {
 	 */
 	public static String dernier(ArrayList<String> liste) {
 		String rep=null;
-		//System.out.println(liste);
 		if (!estVide(liste)) {
 			if (estSurLeDernierElement(liste)) {
 				rep=premier(liste);
@@ -120,8 +120,7 @@ public class Liste {
 				rep=dernier(suite(liste));
 			}
 		}
-		
+
 		return rep;
 	}
-
 }
