@@ -15,8 +15,14 @@ public class Liste {
 		//System.out.println(estSurLeDernierElement(initListe3()));
 		//System.out.println(premier(suite(initListe1())));
 		//String aaa=dernier(initListe1());
-		System.out.println(dernier(initListe3()));
+		//System.out.println(dernier(initListe3()));
 		//System.out.println(dernier(listeVide()));
+		ArrayList<String> chaineA = new ArrayList<String>(1);
+		ArrayList<String> chaineB = new ArrayList<String>(1);
+		chaineB.add("Modif B Avt inverser");
+		System.out.println("A = "+chaineA+" B = "+chaineB);
+		inverser(chaineA, chaineB);
+		System.out.println("A = "+chaineA+" B = "+chaineB);
 
 	}
 
@@ -123,4 +129,12 @@ public class Liste {
 
 		return rep;
 	}
+	
+	public static void inverser( ArrayList<String> a, ArrayList<String> b) {
+			System.out.println("Valeur de a et b au début de l'inversion a = "+a+" b = "+b);
+			ArrayList<String> c = a; a=b; b=c;
+			System.out.println("Ajout de référence ? à la référence pointée par c (a)");
+			c.add("AjoutAReferenceC");
+			System.out.println("Valeur de a et b à la fin de l'inversion a = "+a+" b = "+b);
+			}
 }
